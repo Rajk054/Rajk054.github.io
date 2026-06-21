@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raj Kanchan — ML Engineer & AI Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f4f4f5;
+      --gray-200: #e4e4e7;
+      --gray-400: #a1a1aa;
+      --gray-600: #52525b;
+      --amber: #f59e0b;
+      --amber-light: #fffbeb;
+      --amber-dark: #92400e;
+      --amber-mid: #d97706;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 max(2rem, 6vw);
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+
+    .nav-cta {
+      font-size: 13px !important;
+      font-weight: 500;
+      color: var(--white) !important;
+      background: var(--black);
+      padding: 7px 18px;
+      border-radius: 100px;
+      transition: background 0.15s ease, color 0.15s ease !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--amber) !important;
+      color: var(--black) !important;
+    }
+
+    /* ── layout ── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 max(2rem, 6vw);
+    }
+
+    section { padding: 6rem 0; }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--amber-mid);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 600;
+      letter-spacing: -0.8px;
+      color: var(--black);
+      margin-bottom: 3rem;
+    }
+
+    /* ── hero ── */
+    #hero {
+      padding: 6rem 0 5rem;
+      min-height: calc(100vh - 62px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      width: fit-content;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+
+    .hero-badge span {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: #166534;
+      letter-spacing: 0.2px;
+    }
+
+    h1.hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 88px);
+      font-weight: 700;
+      letter-spacing: -3px;
+      line-height: 0.95;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-role {
+      font-family: var(--font-display);
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 400;
+      color: var(--gray-600);
+      letter-spacing: -0.3px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-role em {
+      color: var(--amber-mid);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .hero-bio {
+      font-size: 15px;
+      color: var(--gray-600);
+      max-width: 460px;
+      line-height: 1.85;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      padding: 11px 24px;
+      border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary:hover { background: var(--amber); color: var(--black); }
+
+    .btn-ghost {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s ease;
+    }
+
+    .btn-ghost:hover { color: var(--black); }
+
+    /* ── model card (hero easter egg) ── */
+    .model-card {
+      font-family: var(--font-mono);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 20px 22px;
+      background: var(--gray-50);
+      min-width: 230px;
+      flex-shrink: 0;
+    }
+
+    .model-card-header {
+      font-size: 10px;
+      color: var(--gray-400);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .model-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .model-card-row:last-child { border-bottom: none; }
+    .model-card-key { color: var(--gray-400); font-size: 10px; }
+    .model-card-val { color: var(--black); font-size: 11px; font-weight: 500; }
+    .model-card-val.available { color: #16a34a; }
+
+    /* ── projects ── */
+    #projects {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--amber);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .project-card:hover { border-color: var(--amber); }
+    .project-card:hover::after { opacity: 1; }
+
+    .project-card--soon { cursor: default; }
+
+    .project-soon {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-400);
+      border: 1px solid var(--gray-200);
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .project-type {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--amber-dark);
+      background: var(--amber-light);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    .project-link-icon {
+      font-size: 15px;
+      color: var(--gray-400);
+      transition: color 0.15s ease;
+    }
+
+    .project-card:hover .project-link-icon { color: var(--amber-mid); }
+
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      color: var(--black);
+    }
+
+    .project-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .stack-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-600);
+      background: var(--gray-100);
+      padding: 4px 9px;
+      border-radius: 5px;
+    }
+
+    /* ── skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .skill-group-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 6px 13px;
+      border-radius: 6px;
+      border: 1px solid var(--gray-200);
+      color: var(--black);
+      background: var(--white);
+      cursor: default;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--amber);
+      background: var(--amber-light);
+    }
+
+    .skill-tag.primary {
+      background: var(--amber-light);
+      border-color: #fcd34d;
+      color: var(--amber-dark);
+    }
+
+    /* ── publications ── */
+    #publications {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 48px 1fr 24px;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      text-decoration: none;
+      transition: background 0.1s ease;
+    }
+
+    .pub-item:first-child { border-top: 1px solid var(--gray-200); }
+
+    .pub-item:hover { background: var(--amber-light); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 8px; }
+
+    .pub-year {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--amber-mid);
+      font-weight: 500;
+      padding-top: 2px;
+    }
+
+    .pub-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+      line-height: 1.4;
+    }
+
+    .venue-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--amber-dark);
+      background: var(--amber-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .pub-authors {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 5px;
+    }
+
+    .pub-arrow {
+      font-size: 14px;
+      color: var(--gray-200);
+      padding-top: 2px;
+      transition: color 0.15s ease;
+    }
+
+    .pub-item:hover .pub-arrow { color: var(--amber-mid); }
+
+    /* ── blog ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s ease;
+    }
+
+    .blog-card:hover { border-color: var(--amber); }
+
+    .blog-date {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.3px;
+      line-height: 1.35;
+      flex: 1;
+      transition: color 0.15s ease;
+    }
+
+    .blog-card:hover .blog-title { color: var(--amber-dark); }
+
+    .blog-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .blog-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-400);
+      background: var(--gray-100);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .blog-arrow {
+      font-size: 14px;
+      color: var(--gray-400);
+      transition: color 0.15s ease, transform 0.15s ease;
+      display: inline-block;
+    }
+
+    .blog-card:hover .blog-arrow {
+      color: var(--amber-mid);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── capstone research lead ── */
+    .research-lead {
+      border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--amber);
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .research-q-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-mid);
+      display: block;
+      margin-bottom: 0.85rem;
+    }
+
+    .research-q {
+      font-family: var(--font-display);
+      font-size: clamp(17px, 2.1vw, 22px);
+      font-weight: 500;
+      line-height: 1.55;
+      letter-spacing: -0.3px;
+      color: var(--black);
+    }
+
+    .research-log-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .research-log-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--black);
+    }
+
+    .research-log-note {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--amber-mid);
+    }
+
+    .blog-card--soon { cursor: default; }
+    .blog-card--soon:hover { border-color: var(--gray-200); }
+    .blog-card--soon:hover .blog-title { color: var(--black); }
+
+    .blog-soon {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-400);
+      border: 1px solid var(--gray-200);
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── contact ── */
+    #contact { border-top: 1px solid var(--gray-200); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.85;
+      margin-bottom: 2.25rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 13px;
+      font-family: var(--font-mono);
+      transition: color 0.15s ease;
+    }
+
+    .social-link:hover { color: var(--amber-dark); }
+
+    .social-icon {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      background: var(--white);
+      color: var(--gray-600);
+      transition: border-color 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .social-link:hover .social-icon { border-color: var(--amber); }
+
+    /* form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+
+    .form-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--black);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .form-input, .form-textarea {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.15s ease;
+      width: 100%;
+      appearance: none;
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-textarea:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1); }
+    .form-textarea { resize: vertical; min-height: 130px; }
+
+    .form-submit {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      border-radius: 100px;
+      padding: 12px 28px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+      width: fit-content;
+      margin-top: 0.25rem;
+    }
+
+    .form-submit:hover { background: var(--amber); color: var(--black); }
+
+    /* ── footer ── */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem max(2rem, 6vw);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--black);
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray-400);
+    }
+
+    .footer-copy a { color: var(--amber-mid); text-decoration: none; }
+    .footer-copy a:hover { text-decoration: underline; }
+
+    /* ── divider ── */
+    .divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: 0;
+    }
+
+    /* ── scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .model-card { display: none; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 680px) {
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-name" href="#hero">Raj Kanchan</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#publications">Research</a></li>
+    <li><a href="#blog">Research Log</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <div class="badge-dot"></div>
+          <span>Based in Japan</span>
+        </div>
+        <h1 class="hero-name">Raj<br>Kanchan</h1>
+        <p class="hero-role">ML Engineer &amp; <em>AI Researcher</em></p>
+        <p class="hero-bio">
+          ML engineer based in Japan, currently working at Daifuku. I studied at Savitribai Phule Pune University. My focus right now is a long-term research project on 3D scene understanding — using predictive models over DINOv2 features and 3D Gaussian Splatting scene memory to detect object-level changes.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View my work</a>
+          <span class="btn-ghost" style="cursor:default;opacity:0.55;">Resume — coming soon</span>
+        </div>
+      </div>
+      <!-- Model card easter egg — a nod to the ML world -->
+      <div class="model-card" aria-hidden="true">
+        <div class="model-card-header">model_card.json</div>
+        <div class="model-card-row">
+          <span class="model-card-key">name</span>
+          <span class="model-card-val">raj-kanchan</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">type</span>
+          <span class="model-card-val">MLE / Researcher</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">params</span>
+          <span class="model-card-val">4yr experience</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">pretrained_on</span>
+          <span class="model-card-val">SPPU, Pune</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">finetuned_on</span>
+          <span class="model-card-val">Daifuku</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">location</span>
+          <span class="model-card-val">Japan</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">license</span>
+          <span class="model-card-val">cc-by-4.0</span>
+        </div>
+        <div class="model-card-row">
+          <span class="model-card-key">status</span>
+          <span class="model-card-val available">● available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <span class="section-label reveal">Projects</span>
+    <h2 class="section-heading reveal">Selected work</h2>
+    <div class="projects-grid">
+      <a href="https://github.com/Rajk054/CC_Fraud" class="project-card reveal" target="_blank" rel="noopener">
+        <div class="project-meta">
+          <span class="project-type">ML / Fraud</span>
+          <span class="project-link-icon">↗</span>
+        </div>
+        <div class="project-name">Transaction Fraud Detection</div>
+        <p class="project-desc">Compares an autoencoder, a focal-loss MLP, and a GraphSAGE GNN on PaySim transactions — testing whether a transaction graph catches coordinated fraud that row-by-row models miss. Chronological split, PR-AUC ranking, cost-based evaluation.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">GraphSAGE</span>
+          <span class="stack-tag">PaySim</span>
+        </div>
+      </a>
+      <a href="https://github.com/Rajk054/sequential-recommendation-sasrec" class="project-card reveal" target="_blank" rel="noopener">
+        <div class="project-meta">
+          <span class="project-type">Recommender</span>
+          <span class="project-link-icon">↗</span>
+        </div>
+        <div class="project-name">Sequential Recommendation (SASRec)</div>
+        <p class="project-desc">Benchmarks matrix factorization, a two-tower retrieval model, and a SASRec Transformer on MovieLens 1M with full-catalog NDCG/Recall. Includes a FastAPI + FAISS HNSW service comparing exact vs. approximate retrieval.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">FAISS</span>
+          <span class="stack-tag">FastAPI</span>
+        </div>
+      </a>
+      <div class="project-card reveal project-card--soon">
+        <div class="project-meta">
+          <span class="project-type">Vision / Research</span>
+          <span class="project-soon">soon</span>
+        </div>
+        <div class="project-name">DINO vs. ImageNet for Detection</div>
+        <p class="project-desc">Asks whether frozen self-supervised DINO features transfer better than supervised ImageNet features for low-label object detection. The same from-scratch YOLO-style head is attached to both frozen backbones on Pascal VOC, measured by mAP@0.5.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">DINO</span>
+          <span class="stack-tag">ViT</span>
+        </div>
+      </div>
+      <div class="project-card reveal project-card--soon">
+        <div class="project-meta">
+          <span class="project-type">Reinforcement Learning</span>
+          <span class="project-soon">soon</span>
+        </div>
+        <div class="project-name">PPO from Scratch (Atari)</div>
+        <p class="project-desc">Proximal Policy Optimization implemented directly in PyTorch and trained on Atari Breakout. The clipped objective, GAE, rollout buffer, entropy regularization, and stability diagnostics are all local code; Gymnasium only runs the environment.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">Gymnasium</span>
+          <span class="stack-tag">PPO</span>
+        </div>
+      </div>
+      <div class="project-card reveal project-card--soon">
+        <div class="project-meta">
+          <span class="project-type">Alignment / RLHF</span>
+          <span class="project-soon">soon</span>
+        </div>
+        <div class="project-name">RLHF from Scratch</div>
+        <p class="project-desc">A full RL-for-LLMs pipeline in PyTorch: a DistilBERT reward model, a GPT-2 policy, adaptive KL control, and a clipped PPO update — built without TRL so every alignment mechanic stays visible and inspectable.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">GPT-2</span>
+          <span class="stack-tag">PPO</span>
+        </div>
+      </div>
+      <div class="project-card reveal project-card--soon">
+        <div class="project-meta">
+          <span class="project-type">Vision / Research</span>
+          <span class="project-soon">soon</span>
+        </div>
+        <div class="project-name">Self-Supervised Vision (SimCLR)</div>
+        <p class="project-desc">SimCLR built from scratch to test whether self-supervised pretraining helps when labels are scarce. Pretrains on STL-10's unlabeled split, fine-tunes on 5,000 labels, and compares against an identical fully supervised baseline.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">SimCLR</span>
+          <span class="stack-tag">ResNet</span>
+        </div>
+      </div>
+      <div class="project-card reveal project-card--soon">
+        <div class="project-meta">
+          <span class="project-type">Vision</span>
+          <span class="project-soon">soon</span>
+        </div>
+        <div class="project-name">Semantic Segmentation</div>
+        <p class="project-desc">A from-scratch semantic segmentation pipeline in PyTorch, with model, data loading, label handling, and mean-IoU evaluation built as separate, inspectable modules.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">Segmentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <span class="section-label reveal">Skills</span>
+    <h2 class="section-heading reveal">Tools &amp; stack</h2>
+    <div class="skills-grid">
+      <div class="reveal">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Python</span>
+          <span class="skill-tag primary">C++</span>
+          <span class="skill-tag">CUDA</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skill-group-label">ML Frameworks</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">PyTorch</span>
+          <span class="skill-tag primary">JAX</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Triton</span>
+          <span class="skill-tag">Flax</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skill-group-label">Infrastructure</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Kubernetes</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Ray</span>
+          <span class="skill-tag">Slurm</span>
+          <span class="skill-tag">Airflow</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skill-group-label">Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">HuggingFace</span>
+          <span class="skill-tag">W&amp;B</span>
+          <span class="skill-tag">GCP</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Azure ML</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ── -->
+<section id="publications">
+  <div class="container">
+    <span class="section-label reveal">Research</span>
+    <h2 class="section-heading reveal">Publications</h2>
+    <div class="pub-list">
+      <a href="https://thegrenze.com/index.php?display=page&view=journalabstract&absid=4480&id=8" class="pub-item reveal" target="_blank" rel="noopener">
+        <span class="pub-year">2025</span>
+        <div>
+          <div class="pub-title">Doodle Recognition using ConvLSTM2D: A Machine Learning Approach</div>
+          <span class="venue-badge">GRENZE Int. J. of Engineering &amp; Technology</span>
+          <div class="pub-authors">Raj Kanchan, Supriya Lokhande, Shrinivas Patil, Vijayalaxmi Kanade</div>
+        </div>
+        <span class="pub-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAPSTONE RESEARCH LOG ── -->
+<section id="blog">
+  <div class="container">
+    <span class="section-label reveal">Capstone Research</span>
+    <h2 class="section-heading reveal">Predictive scene-change detection</h2>
+    <div class="research-lead reveal">
+      <span class="research-q-label">The question I'm working on</span>
+      <p class="research-q">Can a lightweight predictive model trained over DINOv2 features from a persistent 3D Gaussian Splatting scene memory produce a calibrated latent error signal that detects object-level scene changes from sparse post-change observations — and does this predictive error outperform direct feature comparison and 3DGS-based change-detection baselines?</p>
+    </div>
+    <div class="research-log-head reveal">
+      <span class="research-log-title">Weekly research log</span>
+      <span class="research-log-note">New entry every week</span>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card blog-card--soon reveal">
+        <span class="blog-date">Week 1 · Upcoming</span>
+        <div class="blog-title">Building a persistent 3DGS scene memory</div>
+        <div class="blog-footer">
+          <span class="blog-tag">3dgs</span>
+          <span class="blog-soon">soon</span>
+        </div>
+      </div>
+      <div class="blog-card blog-card--soon reveal">
+        <span class="blog-date">Week 2 · Upcoming</span>
+        <div class="blog-title">DINOv2 features as a scene-level prior</div>
+        <div class="blog-footer">
+          <span class="blog-tag">dinov2</span>
+          <span class="blog-soon">soon</span>
+        </div>
+      </div>
+      <div class="blog-card blog-card--soon reveal">
+        <span class="blog-date">Week 3 · Upcoming</span>
+        <div class="blog-title">Toward a calibrated predictive error signal</div>
+        <div class="blog-footer">
+          <span class="blog-tag">calibration</span>
+          <span class="blog-soon">soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <span class="section-label reveal">Contact</span>
+    <h2 class="section-heading reveal">Get in touch</h2>
+    <div class="contact-inner">
+      <div class="reveal">
+        <p class="contact-intro">
+          Open to research collaborations, full-time roles, and ambitious problems at the intersection of AI and systems. If you're building something that matters, I'd love to hear from you.
+        </p>
+        <div class="social-links">
+          <a href="mailto:rajkanchan54@gmail.com" class="social-link">
+            <div class="social-icon">✉</div>
+            rajkanchan54@gmail.com
+          </a>
+          <a href="https://github.com/Rajk054" class="social-link" target="_blank" rel="noopener">
+            <div class="social-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            github.com/Rajk054
+          </a>
+          <a href="https://www.linkedin.com/in/raj-kanchan-604965242" class="social-link" target="_blank" rel="noopener">
+            <div class="social-icon" style="font-size:11px;font-weight:600;font-family:sans-serif;">in</div>
+            linkedin.com/in/raj-kanchan
+          </a>
+        </div>
+      </div>
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Name</label>
+            <input class="form-input" id="contact-name" type="text" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email</label>
+            <input class="form-input" id="contact-email" type="email" placeholder="you@example.com" autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contact-subject">Subject</label>
+          <input class="form-input" id="contact-subject" type="text" placeholder="What's this about?" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Message</label>
+          <textarea class="form-textarea" id="contact-message" placeholder="Tell me about your project or opportunity…"></textarea>
+        </div>
+        <button class="form-submit" type="submit" id="submit-btn">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-name">Raj Kanchan</span>
+  <span class="footer-copy">Built with precision. Powered by <a href="#">curiosity</a>.</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Contact form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Message sent ✓';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send message';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>

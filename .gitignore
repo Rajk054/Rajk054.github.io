@@ -1,0 +1,5 @@
+# Only the portfolio site is published.
+# Ignore everything in this folder except the site file itself.
+/*
+!/.gitignore
+!/index.html
