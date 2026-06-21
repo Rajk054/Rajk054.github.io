@@ -641,7 +641,8 @@
 
     .contact-inner {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-columns: 1fr;
+      max-width: 640px;
       gap: 5rem;
       align-items: start;
     }
@@ -821,7 +822,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#publications">Research</a></li>
-    <li><a href="#blog">Research Log</a></li>
+    <li><a href="#blog">Capstone</a></li>
     <li><a href="#contact" class="nav-cta">Get in touch</a></li>
   </ul>
 </nav>
@@ -841,7 +842,8 @@
           ML engineer based in Japan, currently working at Daifuku. I studied at Savitribai Phule Pune University. My focus right now is a long-term research project on 3D scene understanding — using predictive models over DINOv2 features and 3D Gaussian Splatting scene memory to detect object-level changes.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View my work</a>
+          <a href="#projects" class="btn-primary">View projects</a>
+          <a href="https://github.com/Rajk054" class="btn-ghost" target="_blank" rel="noopener">GitHub ↗</a>
           <span class="btn-ghost" style="cursor:default;opacity:0.55;">Resume — coming soon</span>
         </div>
       </div>
@@ -858,7 +860,7 @@
         </div>
         <div class="model-card-row">
           <span class="model-card-key">params</span>
-          <span class="model-card-val">4yr experience</span>
+          <span class="model-card-val">2yr experience</span>
         </div>
         <div class="model-card-row">
           <span class="model-card-key">pretrained_on</span>
@@ -871,10 +873,6 @@
         <div class="model-card-row">
           <span class="model-card-key">location</span>
           <span class="model-card-val">Japan</span>
-        </div>
-        <div class="model-card-row">
-          <span class="model-card-key">license</span>
-          <span class="model-card-val">cc-by-4.0</span>
         </div>
         <div class="model-card-row">
           <span class="model-card-key">status</span>
@@ -999,43 +997,44 @@
     <h2 class="section-heading reveal">Tools &amp; stack</h2>
     <div class="skills-grid">
       <div class="reveal">
-        <div class="skill-group-label">Languages</div>
+        <div class="skill-group-label">Languages &amp; Core</div>
         <div class="skill-tags">
           <span class="skill-tag primary">Python</span>
-          <span class="skill-tag primary">C++</span>
-          <span class="skill-tag">CUDA</span>
-          <span class="skill-tag">Bash</span>
-          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">pandas</span>
+          <span class="skill-tag">Matplotlib</span>
         </div>
       </div>
       <div class="reveal">
-        <div class="skill-group-label">ML Frameworks</div>
+        <div class="skill-group-label">Deep Learning</div>
         <div class="skill-tags">
           <span class="skill-tag primary">PyTorch</span>
-          <span class="skill-tag primary">JAX</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">Triton</span>
-          <span class="skill-tag">Flax</span>
+          <span class="skill-tag">TensorFlow / Keras</span>
+          <span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">torchvision</span>
+          <span class="skill-tag">PyTorch Geometric</span>
+          <span class="skill-tag">scikit-learn</span>
         </div>
       </div>
       <div class="reveal">
-        <div class="skill-group-label">Infrastructure</div>
+        <div class="skill-group-label">Tools &amp; Workflow</div>
         <div class="skill-tags">
-          <span class="skill-tag primary">Kubernetes</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Ray</span>
-          <span class="skill-tag">Slurm</span>
-          <span class="skill-tag">Airflow</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">FAISS</span>
+          <span class="skill-tag">Git &amp; GitHub</span>
+          <span class="skill-tag">Kaggle (GPU)</span>
+          <span class="skill-tag">pytest</span>
         </div>
       </div>
       <div class="reveal">
-        <div class="skill-group-label">Platforms</div>
+        <div class="skill-group-label">Focus areas</div>
         <div class="skill-tags">
-          <span class="skill-tag">HuggingFace</span>
-          <span class="skill-tag">W&amp;B</span>
-          <span class="skill-tag">GCP</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Azure ML</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Reinforcement Learning</span>
+          <span class="skill-tag">Self-Supervised Learning</span>
+          <span class="skill-tag">Graph Neural Nets</span>
+          <span class="skill-tag">Recommender Systems</span>
+          <span class="skill-tag">LLMs / RLHF</span>
         </div>
       </div>
     </div>
@@ -1070,36 +1069,6 @@
       <span class="research-q-label">The question I'm working on</span>
       <p class="research-q">Can a lightweight predictive model trained over DINOv2 features from a persistent 3D Gaussian Splatting scene memory produce a calibrated latent error signal that detects object-level scene changes from sparse post-change observations — and does this predictive error outperform direct feature comparison and 3DGS-based change-detection baselines?</p>
     </div>
-    <div class="research-log-head reveal">
-      <span class="research-log-title">Weekly research log</span>
-      <span class="research-log-note">New entry every week</span>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card blog-card--soon reveal">
-        <span class="blog-date">Week 1 · Upcoming</span>
-        <div class="blog-title">Building a persistent 3DGS scene memory</div>
-        <div class="blog-footer">
-          <span class="blog-tag">3dgs</span>
-          <span class="blog-soon">soon</span>
-        </div>
-      </div>
-      <div class="blog-card blog-card--soon reveal">
-        <span class="blog-date">Week 2 · Upcoming</span>
-        <div class="blog-title">DINOv2 features as a scene-level prior</div>
-        <div class="blog-footer">
-          <span class="blog-tag">dinov2</span>
-          <span class="blog-soon">soon</span>
-        </div>
-      </div>
-      <div class="blog-card blog-card--soon reveal">
-        <span class="blog-date">Week 3 · Upcoming</span>
-        <div class="blog-title">Toward a calibrated predictive error signal</div>
-        <div class="blog-footer">
-          <span class="blog-tag">calibration</span>
-          <span class="blog-soon">soon</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1111,7 +1080,7 @@
     <div class="contact-inner">
       <div class="reveal">
         <p class="contact-intro">
-          Open to research collaborations, full-time roles, and ambitious problems at the intersection of AI and systems. If you're building something that matters, I'd love to hear from you.
+          I'm currently committed to my role at Daifuku and not actively job-hunting. That said, I'm always happy to connect — and genuinely open to an exceptional opportunity or research collaboration if it's the right fit. If you're building something ambitious, I'd love to hear about it.
         </p>
         <div class="social-links">
           <a href="mailto:rajkanchan54@gmail.com" class="social-link">
@@ -1130,27 +1099,6 @@
           </a>
         </div>
       </div>
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="contact-name">Name</label>
-            <input class="form-input" id="contact-name" type="text" placeholder="Your name" autocomplete="name" />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-email">Email</label>
-            <input class="form-input" id="contact-email" type="email" placeholder="you@example.com" autocomplete="email" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-subject">Subject</label>
-          <input class="form-input" id="contact-subject" type="text" placeholder="What's this about?" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-message">Message</label>
-          <textarea class="form-textarea" id="contact-message" placeholder="Tell me about your project or opportunity…"></textarea>
-        </div>
-        <button class="form-submit" type="submit" id="submit-btn">Send message</button>
-      </form>
     </div>
   </div>
 </section>
@@ -1158,7 +1106,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <span class="footer-name">Raj Kanchan</span>
-  <span class="footer-copy">Built with precision. Powered by <a href="#">curiosity</a>.</span>
+  <span class="footer-copy">© 2026 Raj Kanchan — built in Japan · <a href="https://github.com/Rajk054" target="_blank" rel="noopener">GitHub</a></span>
 </footer>
 
 <script>
@@ -1173,21 +1121,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Contact form
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.textContent = 'Message sent ✓';
-    btn.style.background = '#16a34a';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Send message';
-      btn.style.background = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3000);
-  }
 </script>
 </body>
 </html>
